@@ -1,0 +1,33 @@
+{
+    "config": {
+        "wifi-shield": {
+            "help": "Options are internal, WIFI_IDW0XX1",
+            "value": "WIFI_ISM43362"
+        },
+        "wifi-ssid": {
+            "help": "WiFi SSID",
+            "value": "\"africafrog123\""
+        },
+        "wifi-password": {
+            "help": "WiFi Password",
+            "value": "\"qwer1234\""
+        },
+        "wifi-tx": {
+            "help": "TX pin for serial connection to external device",
+            "value": "D1"
+        }
+    },
+    "target_overrides": {
+        "*": {
+            "platform.stdio-convert-newlines": true
+        },
+        "DISCO_L475VG_IOT01A": {
+            "target.components_add": ["wifi_ism43362"],
+            "ism43362.provide-default": true
+        },
+        "DISCO_F413ZH": {
+            "target.components_add": ["wifi_ism43362"],
+            "ism43362.provide-default": true
+        }
+    }
+}
