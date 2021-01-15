@@ -1,0 +1,147 @@
+#body-node{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(250, 250, 250, 0.986);
+    font-size: 10px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(252, 252, 253);
+}
+
+
+.b1{
+    /* border: 1px solid black; */
+    text-align: center;
+    height: 60vh;
+    width: 50%;
+    border-radius: 1vh;
+    background-color: rgb(27, 27, 27);
+    box-shadow: 0vh 0vh 1vh 0vh  rgba(63, 63, 63, 0.411);
+}
+#logo{
+    height: 200%;
+}
+.top-banner{
+    height: 10vh;
+    width: 100%;
+    line-height: 10vh;
+    font-size: 5em;
+    /*box-shadow: 0vh 1vh 0.5vh -1vh rgba(255, 252, 100, 0.993);*/
+    /*border: 1px solid rgb(255, 255, 255);*/
+}
+.register-part{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    /* border: 1px solid black; */
+}
+.ip-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    /* border: 1px solid black; */
+}
+#node-list{
+    /* display: flex;
+    justify-content: flex-start; */
+    white-space: nowrap;
+    text-align: left;
+    height: 100%;
+    width: 80%;
+    border-radius: 1vh;
+    background-color: rgb(27, 27, 27);
+    box-shadow: 0vh 0vh 0.5vh 0vh rgba(255, 159, 29, 0.993);
+    /* border: 1px solid black; */
+    overflow: scroll;
+}
+.register_button_part{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.register_button_part label{
+    font-size: 2em;
+}
+.register_button_part input{
+    margin-left: 1vh;
+    padding-left: 10px;
+    height: 4vh;
+    width: 75%;
+    border: none; /* <-- This thing here */
+    border:solid 1px rgba(153, 140, 123, 0.993);
+    font-size: 2em;
+    outline: none;
+    border-radius: 0.7vh 0.7vh 0.7vh 0.7vh;
+}
+.ip-button{
+    display: inline-block;
+    text-align: center;
+    line-height: 10vh;
+    height: 100%;
+    width: 20%;
+    /* border: 1px solid blue; */
+}
+.ip-button:hover{
+    background-color: rgba(87, 87, 87, 0.603);
+}
+
+.b2{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: center;
+    height: 80vh;
+    width: 75%;
+    border-radius: 1vh;
+    background-color: rgb(27, 27, 27);
+    box-shadow: 0vh 0vh 1vh 0vh  rgba(63, 63, 63, 0.411);
+    overflow: hidden;
+}
+.info-part{
+    height: 100%;
+    width: 90%;
+}
+.control-part{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0px 20px 0px 20px;
+    height: 100%;
+    width: 10%;
+    box-shadow: -1vw 0vh 0.5vw -1vw rgba(236, 175, 83, 0.993);
+}
+.data-img{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 70%;
+    box-shadow: 0vh 1vh 0.5vh -1vh rgba(236, 175, 83, 0.993);
+}
+.data-img img{
+    height: 90%;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+}
+.data span{
+    width: 60%;
+    margin: 10px 0px 10px 0px;
+    font-size: 2em;
+}
+.need-water{
+    height: 15px;
+    width: 15px;
+    /*border: 1px solid rgb(255, 255, 255);*/
+    border-radius: 10px;
+}

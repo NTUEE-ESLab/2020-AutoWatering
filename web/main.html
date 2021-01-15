@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>eel</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+
+    <!-- eel.js , this is necessary  -->
+    <script type="text/javascript" src="/eel.js"></script>
+
+</head>
+
+<body id="body-node">
+    <div class="b1">
+        <div class="top-banner">
+            <img src="logo_4.png" id="logo" />
+        </div>
+        
+        <!-- 加入一個button去觸發JS 的 btn_click funciton-->
+        <div class="register-part">
+            <div class="register_button_part">
+                <button id="register">Register</button>
+                <input id="register_button" name="register_button" type="text" placeholder="IP" onchange="get_IP(this)">
+                <input id="register_name" name="register_name" type="text" placeholder="STM name" onchange="get_name(this)">
+            </div>
+        </div>
+        <div class="ip-list">
+            <div id="node-list">
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script type="text/javascript" src="./main.js"></script>
+</html>
+
+<style>
+p{color: rgb(0, 88, 146);}
+</style>

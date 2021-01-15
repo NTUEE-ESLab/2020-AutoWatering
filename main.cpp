@@ -40,6 +40,7 @@ SpwfSAInterface wifi(MBED_CONF_APP_WIFI_TX, MBED_CONF_APP_WIFI_RX);
 #define SCALE_MULTIPLIER    0.004
 
 AnalogIn humid(A1);
+DigitalOut CCVGOLTA(D5);
 
 const char *sec2str(nsapi_security_t sec)
 {
@@ -63,7 +64,7 @@ const char *sec2str(nsapi_security_t sec)
 void acc_server(NetworkInterface *net)
 {
     TCPSocket socket;
-    SocketAddress addr("192.168.43.195", 65423);
+    SocketAddress addr("192.168.43.32", 65423);
     SocketAddress addr_cli("192.168.43.21", 8787);
     nsapi_error_t response;
 
@@ -88,7 +89,6 @@ void acc_server(NetworkInterface *net)
 
 
     socket.set_blocking(0);
-    int sample_count = 0;
     /*while (1){
         int data = humid*200;
         printf("%d\n", data);
@@ -121,27 +121,51 @@ void acc_server(NetworkInterface *net)
             printf("Get ACK\n");
             char data_c[3];
             for (int i=0; i<10; i++){
-                int data = humid * 200;
+                int data = humid * 800;
                 sprintf(data_c, "%d", data);
                 printf("data: %s\n", data_c);
                 socket.send(data_c, 3);
-                ThisThread::sleep_for(50ms);
+                ThisThread::sleep_for(100ms);
                 if (i == 9){
+                    ThisThread::sleep_for(300ms);
                     socket.send("end", 3);
                     printf("End message sent\n");
                 }
             }
             memset(recv_buffer, 0, 1);
         }
-        else if (strcmp(recv_buffer, "W") == 0){
-            printf("Water\n");
+        else if ((strcmp(recv_buffer, "1") == 0)){
+            printf("Water %s\n", recv_buffer);
             memset(recv_buffer, 0, 1);
+            CCVGOLTA.write(1);
+            ThisThread::sleep_for(2700ms);
+            CCVGOLTA.write(0);
+        }
+        else if ((strcmp(recv_buffer, "2") == 0)){
+            printf("Water %s\n", recv_buffer);
+            memset(recv_buffer, 0, 1);
+            CCVGOLTA.write(1);
+            ThisThread::sleep_for(5400ms);
+            CCVGOLTA.write(0);
+        }
+        else if ((strcmp(recv_buffer, "3") == 0)){
+            printf("Water %s\n", recv_buffer);
+            memset(recv_buffer, 0, 1);
+            CCVGOLTA.write(1);
+            ThisThread::sleep_for(8100ms);
+            CCVGOLTA.write(0);
+        }
+        else if ((strcmp(recv_buffer, "4") == 0)){
+            printf("Water %s\n", recv_buffer);
+            memset(recv_buffer, 0, 1);
+            CCVGOLTA.write(1);
+            ThisThread::sleep_for(10800ms);
+            CCVGOLTA.write(0);
         }
         else{
-            printf("Nothing\n");
             memset(recv_buffer, 0, 1);
         }
-        ThisThread::sleep_for(500ms);
+        ThisThread::sleep_for(50ms);
     }
 
  
